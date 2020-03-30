@@ -14,8 +14,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Swagger configuration file for the rest ws documentation
- * 
- * TODO we can disable for certain environments with Spring Profiles
  *
  * @author charz
  */

@@ -15,7 +15,7 @@ import ma.glasnost.orika.impl.DefaultMapperFactory;
 /**
  * Service Adapter Base Class
  *
- * @author Charz++
+ * @author charz
  */
 public abstract class BaseAdapter {
 

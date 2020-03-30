@@ -8,7 +8,7 @@ import com.wifiesta.apiresttemplate.core.dao.UserRepository;
 /**
  * User Repository Implementation
  *
- * @author Charz++
+ * @author charz
  */
 
 @Repository
@@ -18,7 +18,7 @@ public class UserRepositoryImpl implements UserRepository {
 
   @Override
   public String getByKey(String id) {
-    logger.info("User Repository Impl called");
+    logger.info("User Repository Implementation called");
     return "user1";
   }
 }

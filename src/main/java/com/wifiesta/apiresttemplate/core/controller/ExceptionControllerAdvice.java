@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.multipart.MultipartException;
+import com.wifiesta.apiresttemplate.core.entity.ErrorResponse;
 import com.wifiesta.apiresttemplate.core.exception.BadRequestException;
 import com.wifiesta.apiresttemplate.core.exception.InternalServerException;
 import com.wifiesta.apiresttemplate.core.exception.NotImplementedException;
 import com.wifiesta.apiresttemplate.core.exception.ResourceNotFoundException;
 import com.wifiesta.apiresttemplate.core.exception.UnauthorizedException;
 import com.wifiesta.apiresttemplate.core.exception.enums.BadRequestErrorType;
-import com.wifiesta.apiresttemplate.entity.ErrorResponse;
 
 /**
  * Exception Controller Advice
@@ -32,7 +32,7 @@ public class ExceptionControllerAdvice {
 	@ResponseBody
 	@ExceptionHandler(ResourceNotFoundException.class)
 	@ResponseStatus(HttpStatus.NOT_FOUND)
-	ErrorResponse resourceNotFoundExceptionHandler(ResourceNotFoundException ex) {
+	public ErrorResponse resourceNotFoundExceptionHandler(ResourceNotFoundException ex) {
 		// Handles all resource not found exceptions types
 		return new ErrorResponse(ex.getCode(), ex.getMessage());
 	}

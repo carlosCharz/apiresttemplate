@@ -3,7 +3,7 @@ package com.wifiesta.apiresttemplate.core.dao;
 /**
  * Interface for User Repository Implementation
  * 
- * @author Charz++
+ * @author charz
  */
 
 public interface UserRepository {

@@ -1,4 +1,4 @@
-package com.wifiesta.apiresttemplate.entity;
+package com.wifiesta.apiresttemplate.core.entity;
 
 /**
  * Error Response

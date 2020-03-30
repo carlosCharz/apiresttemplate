@@ -12,7 +12,7 @@ import com.wifiesta.apiresttemplate.core.service.UserService;
 /**
  * Service that manages the logic for Users
  *
- * @author Charz++
+ * @author charz
  */
 
 @Service
@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public String getByKey(String id) {
-    logger.info("User Service Impl called");
+    logger.info("User Service Implementation called");
     return userRepository.getByKey(id);
   }
   

@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to the project will be documented in this file, in a per release basis.
 
-## [unreleased]
+## UNRELEASED
 
 -------------------------------------------------------------------------------
 
@@ -9,4 +9,3 @@ All notable changes to the project will be documented in this file, in a per rel
 
 ## Added
 - Initial commit
-

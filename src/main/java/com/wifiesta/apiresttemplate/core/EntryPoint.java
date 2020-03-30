@@ -5,13 +5,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import com.wifiesta.apiresttemplate.core.configuration.ProjectBanner;
 
 /**
  * Entry Point class
  * 
  * https://docs.spring.io/spring-boot/docs/current/reference/html/howto-traditional-deployment.html
  *
- * @author Charz++
+ * @author charz
  */
 
 @SpringBootApplication
@@ -24,7 +25,7 @@ public class EntryPoint extends SpringBootServletInitializer {
   @Override
   protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
     logger.info("Catalina home OS variable: {}", CATALINA_HOME);
-    return application.sources(EntryPoint.class);
+    return application.sources(EntryPoint.class).banner(new ProjectBanner());
   }
 
   public static void main(String[] args) {

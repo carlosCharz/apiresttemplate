@@ -5,7 +5,7 @@ import ma.glasnost.orika.MapperFactory;
 /**
  * Service Adapter Class. By default: mapNulls: false
  *
- * @author Charz++
+ * @author charz
  */
 public class ServiceAdapter extends BaseAdapter {
 

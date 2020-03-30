@@ -3,7 +3,7 @@ package com.wifiesta.apiresttemplate.core.service;
 /**
  * Interface for User Service Implementation
  *
- * @author Charz++
+ * @author charz
  */
 
 public interface UserService {

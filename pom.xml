@@ -4,7 +4,7 @@
 
 	<groupId>com.wifiesta</groupId>
 	<artifactId>apiresttemplate</artifactId>
-	<version>2.0.0</version>
+	<version>1.0.0</version>
 	<packaging>war</packaging>
 	<name>Spring Boot Project with Maven</name>
 	<description>This is a Spring Boot Rest template project that handle the application properties per environment using Maven profiles.</description>
@@ -15,16 +15,13 @@
 		<java.version>1.8</java.version>
 		<tomcat.version>8.5.42</tomcat.version> <!-- activates spring boot internal servlet configuration when used as auto executable -->
 		<orika.version>1.5.4</orika.version>
-		<swagger2.version>2.9.2</swagger2.version> <!-- TODO update it? -->
+		<swagger2.version>2.9.2</swagger2.version>
 	</properties>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.1.RELEASE</version>
-		<!-- https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Release-Notes -->
-		<!-- https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.1.0-M1-Release-Notes -->
-		<!-- https://github.com/spring-projects/spring-booT/wiki/Spring-Boot-2.2.0-M1-Release-Notes -->
 	</parent>
 
 	<dependencies>
@@ -128,14 +125,17 @@
             	<artifactId>maven-antrun-plugin</artifactId>
             	<executions>
                 	<execution>
+                	<!-- The following line is to avoid the PluginManagement section. This execution will be executed on every Project Configuration update. See this: https://www.eclipse.org/m2e/documentation/release-notes-17.html -->
+                	<?m2e execute onConfiguration?>
                     	<phase>generate-resources</phase>
                     	<goals>
                         	<goal>run</goal>
                     	</goals>
                     	<configuration>
-                        	<tasks>
-                            	<echo>Current maven active profile: ${current.profile}</echo>
-                        	</tasks>
+							<target>
+								<echo>Current maven active profile: ${current.profile}</echo>
+								<echo>Current spring active profile: ${spring.profiles.active}</echo>
+							</target>
                     	</configuration>
                 	</execution>
             	</executions>

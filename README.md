@@ -1,4 +1,4 @@
-# API Rest Template + Maven Profiles + Spring Boot
+# API Rest Template + Maven Profiles + Spring Profiles + Spring Boot
 
 This is a Spring Boot Rest template project that handle the application properties per environment using Maven profiles. It has 3 layers (Controller, Service and Dao). It additionally has error handling, AOP profilers Mappers, and Swagger for documentation.
 
@@ -52,14 +52,16 @@ http://localhost:8080/apiresttemplate/params/test
 http://localhost:8080/apiresttemplate/params/exception
 ```
 
-**4. HTTP Method: GET**
+## To check that Swagger is configured correctly
+
+**1. HTTP Method: GET**
 ```
-http://localhost:8080/apiresttemplate/v2/api-docs
+https://localhost:8080/apiresttemplate/v2/api-docs 
 ```
 
-**5. HTTP Method: GET**
+**2. HTTP Method: GET**
 ```
-http://localhost:8080/apiresttemplate/swagger-ui.html
+https://localhost:8080/apiresttemplate/swagger-ui.html 
 ```
 
 ## Other Alternatives (Examples)

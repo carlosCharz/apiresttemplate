@@ -5,7 +5,7 @@ import ma.glasnost.orika.MapperFactory;
 /**
  * Repository Adapter Class
  *
- * @author Charz++
+ * @author charz
  */
 public class RepositoryAdapter extends BaseAdapter {
 

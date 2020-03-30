@@ -73,6 +73,7 @@
 			<properties>
 				<overrides.props.file>local.overrides.properties</overrides.props.file>
 				<current.profile>local</current.profile>
+				<spring.profiles.active>local</spring.profiles.active>
 			</properties>
 		</profile>
 		<profile>
@@ -80,6 +81,15 @@
 			<properties>
 				<overrides.props.file>dev.overrides.properties</overrides.props.file>
 				<current.profile>dev</current.profile>
+				<spring.profiles.active>dev</spring.profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<overrides.props.file>test.overrides.properties</overrides.props.file>
+				<current.profile>test</current.profile>
+				<spring.profiles.active>test</spring.profiles.active>
 			</properties>
 		</profile>
 		<profile>
@@ -87,6 +97,7 @@
 			<properties>
 				<overrides.props.file>qa.overrides.properties</overrides.props.file>
 				<current.profile>qa</current.profile>
+				<spring.profiles.active>qa</spring.profiles.active>
 			</properties>
 		</profile>
 		<profile>
@@ -94,6 +105,7 @@
 			<properties>
 				<overrides.props.file>prod.overrides.properties</overrides.props.file>
 				<current.profile>prod</current.profile>
+				<spring.profiles.active>prod</spring.profiles.active>
 			</properties>
 		</profile>
 	</profiles>

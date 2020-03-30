@@ -56,12 +56,12 @@ http://localhost:8080/apiresttemplate/params/exception
 
 **1. HTTP Method: GET**
 ```
-https://localhost:8080/apiresttemplate/v2/api-docs 
+http://localhost:8080/apiresttemplate/v2/api-docs
 ```
 
 **2. HTTP Method: GET**
 ```
-https://localhost:8080/apiresttemplate/swagger-ui.html 
+http://localhost:8080/apiresttemplate/swagger-ui.html
 ```
 
 ## Other Alternatives (Examples)

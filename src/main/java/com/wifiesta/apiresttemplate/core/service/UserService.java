@@ -1,15 +1,15 @@
 package com.wifiesta.apiresttemplate.core.service;
 
 /**
- * Interface for User Service Implementation
+ * Interface for UserServiceImpl
  *
  * @author charz
  */
 
 public interface UserService {
 
-  String getByKey(String id);
-  
-  String testException();
+    String getByKey(String id);
+
+    String testException();
 
 }

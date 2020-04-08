@@ -14,11 +14,11 @@ import com.wifiesta.apiresttemplate.core.dao.UserRepository;
 @Repository
 public class UserRepositoryImpl implements UserRepository {
 
-  protected static final Logger logger = LoggerFactory.getLogger(UserRepositoryImpl.class);
+    protected static final Logger logger = LoggerFactory.getLogger(UserRepositoryImpl.class);
 
-  @Override
-  public String getByKey(String id) {
-    logger.info("User Repository Implementation called");
-    return "user1";
-  }
+    @Override
+    public String getByKey(String id) {
+        logger.info("User Repository Implementation called");
+        return "user1";
+    }
 }

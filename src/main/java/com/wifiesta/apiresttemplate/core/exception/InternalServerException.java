@@ -10,17 +10,18 @@ import com.wifiesta.apiresttemplate.core.exception.enums.ServerErrorType;
  */
 public class InternalServerException extends BaseRuntimeException {
 
-	private static final long serialVersionUID = 1L;
-	private ServerErrorType errorType;
+    private static final long serialVersionUID = 1L;
 
-	public InternalServerException(ServerErrorType errorType) {
-		super(errorType.getMessage());
-		this.errorType = errorType;
-	}
+    private ServerErrorType errorType;
 
-	@Override
-	public Integer getCode() {
-		return this.errorType.getCode();
-	}
+    public InternalServerException(ServerErrorType errorType) {
+        super(errorType.getMessage());
+        this.errorType = errorType;
+    }
+
+    @Override
+    public Integer getCode() {
+        return this.errorType.getCode();
+    }
 
 }

@@ -10,17 +10,18 @@ import com.wifiesta.apiresttemplate.core.exception.enums.NotFoundErrorType;
  */
 public class ResourceNotFoundException extends BaseRuntimeException {
 
-	private static final long serialVersionUID = 1L;
-	private NotFoundErrorType errorType;
+    private static final long serialVersionUID = 1L;
 
-	public ResourceNotFoundException(NotFoundErrorType errorType) {
-		super(errorType.getMessage());
-		this.errorType = errorType;
-	}
+    private NotFoundErrorType errorType;
 
-	@Override
-	public Integer getCode() {
-		return this.errorType.getCode();
-	}
+    public ResourceNotFoundException(NotFoundErrorType errorType) {
+        super(errorType.getMessage());
+        this.errorType = errorType;
+    }
+
+    @Override
+    public Integer getCode() {
+        return this.errorType.getCode();
+    }
 
 }

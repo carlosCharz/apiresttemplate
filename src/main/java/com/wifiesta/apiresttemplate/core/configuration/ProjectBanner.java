@@ -9,6 +9,8 @@ import org.springframework.boot.ansi.AnsiStyle;
 import org.springframework.core.env.Environment;
 
 /**
+ * Project Banner
+ * 
  * Get String from https://devops.datenkollektiv.de/banner.txt/index.html
  * 
  * @author charz

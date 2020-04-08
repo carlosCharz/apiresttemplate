@@ -11,9 +11,7 @@ public class ServiceAdapter extends BaseAdapter {
 
 	@Override
 	protected void defineMappings(MapperFactory mapperFactory) {
-
 		// TODO add custom mappers
-
 	}
 
 }

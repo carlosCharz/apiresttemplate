@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
- * Profiler that logs method names for the controllers and serviceImpls
+ * Profiler that logs method names for the controllers
  *
  * @author charz
  */
@@ -22,13 +22,10 @@ public class ApplicationProfiler {
 
 	@Around("execution(* com.wifiesta.apiresttemplate.core.controller.*.*(..))")
 	public Object aroundControllers(ProceedingJoinPoint pjp) throws Throwable {
-
 		Signature method = pjp.getSignature();
 		String packageName = method.getDeclaringTypeName();
 		String controllerName = packageName.substring(packageName.lastIndexOf(".") + 1);
-
 		logger.info(controllerName + " -> " + method.getName());
-
 		return pjp.proceed();
 	}
 

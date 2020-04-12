@@ -21,95 +21,95 @@ import com.wifiesta.apiresttemplate.core.exception.enums.BadRequestErrorType;
 
 /**
  * Exception Controller Advice
- * 
+ *
  * @author charz
  *
  */
 @ControllerAdvice
 public class ExceptionControllerAdvice {
 
-	// Custom exception handlers
-	@ResponseBody
-	@ExceptionHandler(ResourceNotFoundException.class)
-	@ResponseStatus(HttpStatus.NOT_FOUND)
-	public ErrorResponse resourceNotFoundExceptionHandler(ResourceNotFoundException ex) {
-		// Handles all resource not found exceptions types
-		return new ErrorResponse(ex.getCode(), ex.getMessage());
-	}
+  // Custom exception handlers
+  @ResponseBody
+  @ExceptionHandler(ResourceNotFoundException.class)
+  @ResponseStatus(HttpStatus.NOT_FOUND)
+  public ErrorResponse resourceNotFoundExceptionHandler(ResourceNotFoundException ex) {
+    // Handles all resource not found exceptions types
+    return new ErrorResponse(ex.getCode(), ex.getMessage());
+  }
 
-	@ResponseBody
-	@ExceptionHandler(BadRequestException.class)
-	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
-	public ErrorResponse badRequestExceptionHandler(BadRequestException ex) {
-		// Handles all bad request exceptions types
-		return new ErrorResponse(ex.getCode(), ex.getMessage());
-	}
+  @ResponseBody
+  @ExceptionHandler(BadRequestException.class)
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+  public ErrorResponse badRequestExceptionHandler(BadRequestException ex) {
+    // Handles all bad request exceptions types
+    return new ErrorResponse(ex.getCode(), ex.getMessage());
+  }
 
-	@ResponseBody
-	@ExceptionHandler(NotImplementedException.class)
-	@ResponseStatus(value = HttpStatus.NOT_IMPLEMENTED)
-	public ErrorResponse notImplementedExceptionHandler(NotImplementedException ex) {
-		// Handles all not implemented exceptions types
-		return new ErrorResponse(ex.getCode(), ex.getMessage());
-	}
+  @ResponseBody
+  @ExceptionHandler(NotImplementedException.class)
+  @ResponseStatus(value = HttpStatus.NOT_IMPLEMENTED)
+  public ErrorResponse notImplementedExceptionHandler(NotImplementedException ex) {
+    // Handles all not implemented exceptions types
+    return new ErrorResponse(ex.getCode(), ex.getMessage());
+  }
 
-	@ResponseBody
-	@ExceptionHandler(UnauthorizedException.class)
-	@ResponseStatus(value = HttpStatus.UNAUTHORIZED)
-	public ErrorResponse unauthorizedExceptionHandler(UnauthorizedException ex) {
-		// Handles all unauthorized exceptions types
-		return new ErrorResponse(ex.getCode(), ex.getMessage());
-	}
+  @ResponseBody
+  @ExceptionHandler(UnauthorizedException.class)
+  @ResponseStatus(value = HttpStatus.UNAUTHORIZED)
+  public ErrorResponse unauthorizedExceptionHandler(UnauthorizedException ex) {
+    // Handles all unauthorized exceptions types
+    return new ErrorResponse(ex.getCode(), ex.getMessage());
+  }
 
-	@ResponseBody
-	@ExceptionHandler(InternalServerException.class)
-	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-	public ErrorResponse internalServerErrorExceptionHandler(InternalServerException ex) {
-		// Handles all internal server exceptions types
-		return new ErrorResponse(ex.getCode(), ex.getMessage());
-	}
+  @ResponseBody
+  @ExceptionHandler(InternalServerException.class)
+  @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+  public ErrorResponse internalServerErrorExceptionHandler(InternalServerException ex) {
+    // Handles all internal server exceptions types
+    return new ErrorResponse(ex.getCode(), ex.getMessage());
+  }
 
-	// Spring exception handlers
-	@ResponseBody
-	@ExceptionHandler(MethodArgumentNotValidException.class)
-	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
-	public ErrorResponse methodArgumentNotValidExceptionHandler(MethodArgumentNotValidException ex) {
-		return new ErrorResponse(BadRequestErrorType.ARGUMENT_NOT_VALID.getCode(), ex.getMessage());
-	}
+  // Spring exception handlers
+  @ResponseBody
+  @ExceptionHandler(MethodArgumentNotValidException.class)
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+  public ErrorResponse methodArgumentNotValidExceptionHandler(MethodArgumentNotValidException ex) {
+    return new ErrorResponse(BadRequestErrorType.ARGUMENT_NOT_VALID.getCode(), ex.getMessage());
+  }
 
-	@ResponseBody
-	@ExceptionHandler(HttpMessageNotReadableException.class)
-	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
-	public ErrorResponse methodArgumentNotValidExceptionHandler(HttpMessageNotReadableException ex) {
-		return new ErrorResponse(BadRequestErrorType.WRONG_DESERIALIZATION.getCode(), ex.getMessage());
-	}
+  @ResponseBody
+  @ExceptionHandler(HttpMessageNotReadableException.class)
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+  public ErrorResponse methodArgumentNotValidExceptionHandler(HttpMessageNotReadableException ex) {
+    return new ErrorResponse(BadRequestErrorType.WRONG_DESERIALIZATION.getCode(), ex.getMessage());
+  }
 
-	@ResponseBody
-	@ExceptionHandler(HttpRequestMethodNotSupportedException.class)
-	@ResponseStatus(HttpStatus.BAD_REQUEST)
-	public ErrorResponse methodNotSupportedExceptionHandler(HttpRequestMethodNotSupportedException ex) {
-		return new ErrorResponse(BadRequestErrorType.METHOD_NOT_ALLOWED.getCode(), ex.getMessage());
-	}
+  @ResponseBody
+  @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
+  public ErrorResponse methodNotSupportedExceptionHandler(HttpRequestMethodNotSupportedException ex) {
+    return new ErrorResponse(BadRequestErrorType.METHOD_NOT_ALLOWED.getCode(), ex.getMessage());
+  }
 
-	@ResponseBody
-	@ExceptionHandler(MethodArgumentTypeMismatchException.class)
-	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
-	public ErrorResponse methodArgumentTypeMismatchExceptionHandler(MethodArgumentTypeMismatchException ex) {
-		return new ErrorResponse(BadRequestErrorType.ARGUMENT_TYPE_MISMATCH.getCode(), ex.getMessage());
-	}
+  @ResponseBody
+  @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+  public ErrorResponse methodArgumentTypeMismatchExceptionHandler(MethodArgumentTypeMismatchException ex) {
+    return new ErrorResponse(BadRequestErrorType.ARGUMENT_TYPE_MISMATCH.getCode(), ex.getMessage());
+  }
 
-	@ResponseBody
-	@ExceptionHandler(MissingServletRequestParameterException.class)
-	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
-	public ErrorResponse missingServletRequestParameterExceptionHandler(MissingServletRequestParameterException ex) {
-		return new ErrorResponse(BadRequestErrorType.MISSING_PARAMETER.getCode(), ex.getMessage());
-	}
+  @ResponseBody
+  @ExceptionHandler(MissingServletRequestParameterException.class)
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+  public ErrorResponse missingServletRequestParameterExceptionHandler(MissingServletRequestParameterException ex) {
+    return new ErrorResponse(BadRequestErrorType.MISSING_PARAMETER.getCode(), ex.getMessage());
+  }
 
-	@ResponseBody
-	@ExceptionHandler(MultipartException.class)
-	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
-	public ErrorResponse missingServletRequestParameterExceptionHandler(MultipartException ex) {
-		return new ErrorResponse(BadRequestErrorType.EXCEEDED_MULTIPART_MAX_FILE_SIZE.getCode(), ex.getMessage());
-	}
+  @ResponseBody
+  @ExceptionHandler(MultipartException.class)
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+  public ErrorResponse missingServletRequestParameterExceptionHandler(MultipartException ex) {
+    return new ErrorResponse(BadRequestErrorType.EXCEEDED_MULTIPART_MAX_FILE_SIZE.getCode(), ex.getMessage());
+  }
 
 }

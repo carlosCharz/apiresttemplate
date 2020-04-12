@@ -9,7 +9,7 @@ import com.wifiesta.apiresttemplate.core.configuration.ProjectBanner;
 
 /**
  * Entry Point class
- * 
+ *
  * https://docs.spring.io/spring-boot/docs/current/reference/html/howto-traditional-deployment.html
  *
  * @author charz
@@ -18,17 +18,17 @@ import com.wifiesta.apiresttemplate.core.configuration.ProjectBanner;
 @SpringBootApplication
 public class EntryPoint extends SpringBootServletInitializer {
 
-    protected static final Logger logger = LoggerFactory.getLogger(EntryPoint.class);
-    private static final String CATALINA_HOME = System.getProperty("catalina.home");
+  protected static final Logger logger = LoggerFactory.getLogger(EntryPoint.class);
+  private static final String CATALINA_HOME = System.getProperty("catalina.home");
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        logger.info("Catalina home OS variable: {}", CATALINA_HOME);
-        return application.sources(EntryPoint.class).banner(new ProjectBanner());
-    }
+  @Override
+  protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+    logger.info("Catalina home OS variable: {}", CATALINA_HOME);
+    return application.sources(EntryPoint.class).banner(new ProjectBanner());
+  }
 
-    public static void main(String[] args) {
-        new SpringApplicationBuilder(EntryPoint.class).sources(EntryPoint.class).run(args);
-    }
+  public static void main(String[] args) {
+    new SpringApplicationBuilder(EntryPoint.class).sources(EntryPoint.class).run(args);
+  }
 
 }

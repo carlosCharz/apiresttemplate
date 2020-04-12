@@ -38,16 +38,19 @@ Basically, Maven profiles would provide a build-time solution, while Spring prof
 ## Exposed methods to test that works
 
 **1. HTTP Method: GET**
+
 ```
 http://localhost:8080/apiresttemplate/params/all
 ```
 
 **2. HTTP Method: GET**
+
 ```
 http://localhost:8080/apiresttemplate/params/test
 ```
 
 **3. HTTP Method: GET**
+
 ```
 http://localhost:8080/apiresttemplate/params/exception
 ```
@@ -55,11 +58,13 @@ http://localhost:8080/apiresttemplate/params/exception
 ## To check that Swagger is configured correctly
 
 **1. HTTP Method: GET**
+
 ```
 http://localhost:8080/apiresttemplate/v2/api-docs
 ```
 
 **2. HTTP Method: GET**
+
 ```
 http://localhost:8080/apiresttemplate/swagger-ui.html
 ```

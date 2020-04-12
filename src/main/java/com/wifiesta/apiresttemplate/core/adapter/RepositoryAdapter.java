@@ -9,8 +9,7 @@ import ma.glasnost.orika.MapperFactory;
  */
 public class RepositoryAdapter extends BaseAdapter {
 
-	@Override
-	protected void defineMappings(MapperFactory mapperFactory) {
-	}
+  @Override
+  protected void defineMappings(MapperFactory mapperFactory) {}
 
 }

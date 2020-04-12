@@ -18,15 +18,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class ApplicationProfiler {
 
-	protected static final Logger logger = LoggerFactory.getLogger(ApplicationProfiler.class);
+  protected static final Logger logger = LoggerFactory.getLogger(ApplicationProfiler.class);
 
-	@Around("execution(* com.wifiesta.apiresttemplate.core.controller.*.*(..))")
-	public Object aroundControllers(ProceedingJoinPoint pjp) throws Throwable {
-		Signature method = pjp.getSignature();
-		String packageName = method.getDeclaringTypeName();
-		String controllerName = packageName.substring(packageName.lastIndexOf(".") + 1);
-		logger.info(controllerName + " -> " + method.getName());
-		return pjp.proceed();
-	}
+  @Around("execution(* com.wifiesta.apiresttemplate.core.controller.*.*(..))")
+  public Object aroundControllers(ProceedingJoinPoint pjp) throws Throwable {
+    Signature method = pjp.getSignature();
+    String packageName = method.getDeclaringTypeName();
+    String controllerName = packageName.substring(packageName.lastIndexOf(".") + 1);
+    logger.info(controllerName + " -> " + method.getName());
+    return pjp.proceed();
+  }
 
 }

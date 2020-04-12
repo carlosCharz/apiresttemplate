@@ -18,20 +18,20 @@ import com.wifiesta.apiresttemplate.core.service.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 
-    protected static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+  protected static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
-    @Autowired
-    private UserRepository userRepository;
+  @Autowired
+  private UserRepository userRepository;
 
-    @Override
-    public String getByKey(String id) {
-        logger.info("User Service Implementation called");
-        return userRepository.getByKey(id);
-    }
+  @Override
+  public String getByKey(String id) {
+    logger.info("User Service Implementation called");
+    return userRepository.getByKey(id);
+  }
 
-    @Override
-    public String testException() {
-        throw new ResourceNotFoundException(NotFoundErrorType.ACCESS_TOKEN_NOT_FOUND);
-    }
+  @Override
+  public String testException() {
+    throw new ResourceNotFoundException(NotFoundErrorType.ACCESS_TOKEN_NOT_FOUND);
+  }
 
 }

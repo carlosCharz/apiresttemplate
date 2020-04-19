@@ -14,7 +14,7 @@ import com.wifiesta.apiresttemplate.core.dao.UserRepository;
 @Repository
 public class UserRepositoryImpl implements UserRepository {
 
-  protected static final Logger logger = LoggerFactory.getLogger(UserRepositoryImpl.class);
+  private static final Logger logger = LoggerFactory.getLogger(UserRepositoryImpl.class);
 
   @Override
   public String getByKey(String id) {

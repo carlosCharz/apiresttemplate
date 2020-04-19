@@ -18,7 +18,7 @@ import com.wifiesta.apiresttemplate.core.service.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 
-  protected static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+  private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
   @Autowired
   private UserRepository userRepository;

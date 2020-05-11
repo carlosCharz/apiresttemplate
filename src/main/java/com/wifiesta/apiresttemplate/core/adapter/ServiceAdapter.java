@@ -9,9 +9,9 @@ import ma.glasnost.orika.MapperFactory;
  */
 public class ServiceAdapter extends BaseAdapter {
 
-  @Override
-  protected void defineMappings(MapperFactory mapperFactory) {
-    // TODO add custom mappers
-  }
+    @Override
+    protected void defineMappings(MapperFactory mapperFactory) {
+        // TODO add custom mappers
+    }
 
 }

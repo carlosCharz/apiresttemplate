@@ -8,6 +8,6 @@ package com.wifiesta.apiresttemplate.core.dao;
 
 public interface UserRepository {
 
-  String getByKey(String key);
+    String getByKey(String key);
 
 }

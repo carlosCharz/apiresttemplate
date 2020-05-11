@@ -8,8 +8,8 @@ package com.wifiesta.apiresttemplate.core.service;
 
 public interface UserService {
 
-  String getByKey(String id);
+    String getByKey(String id);
 
-  String testException();
+    String testException();
 
 }

@@ -22,30 +22,30 @@ import com.wifiesta.apiresttemplate.core.service.UserService;
 @RequestMapping("/params")
 public class ParamController {
 
-  private static final Logger logger = LoggerFactory.getLogger(ParamController.class);
+    private static final Logger logger = LoggerFactory.getLogger(ParamController.class);
 
-  @Autowired
-  private CustomSetting customSetting;
+    @Autowired
+    private CustomSetting customSetting;
 
-  @Autowired
-  private UserService userService;
+    @Autowired
+    private UserService userService;
 
-  @RequestMapping(value = "/all", method = RequestMethod.GET)
-  @ResponseStatus(HttpStatus.OK)
-  public void printAllEnvironmentParameters() {
-    logger.info(customSetting.toString());
-  }
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public void printAllEnvironmentParameters() {
+        logger.info(customSetting.toString());
+    }
 
-  @RequestMapping(value = "/test", method = RequestMethod.GET)
-  @ResponseStatus(HttpStatus.OK)
-  public String test() {
-    return userService.getByKey("1");
-  }
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public String test() {
+        return userService.getByKey("1");
+    }
 
-  @RequestMapping(value = "/exception", method = RequestMethod.GET)
-  @ResponseStatus(HttpStatus.OK)
-  public String exception() {
-    return userService.testException();
-  }
+    @RequestMapping(value = "/exception", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public String exception() {
+        return userService.testException();
+    }
 
 }

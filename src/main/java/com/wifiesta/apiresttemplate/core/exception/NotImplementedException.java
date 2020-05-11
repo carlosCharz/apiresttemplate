@@ -10,18 +10,18 @@ import com.wifiesta.apiresttemplate.core.exception.enums.ServerErrorType;
  */
 public class NotImplementedException extends BaseRuntimeException {
 
-  private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-  private ServerErrorType errorType;
+    private ServerErrorType errorType;
 
-  public NotImplementedException(ServerErrorType errorType) {
-    super(errorType.getMessage());
-    this.errorType = errorType;
-  }
+    public NotImplementedException(ServerErrorType errorType) {
+        super(errorType.getMessage());
+        this.errorType = errorType;
+    }
 
-  @Override
-  public Integer getCode() {
-    return this.errorType.getCode();
-  }
+    @Override
+    public Integer getCode() {
+        return this.errorType.getCode();
+    }
 
 }

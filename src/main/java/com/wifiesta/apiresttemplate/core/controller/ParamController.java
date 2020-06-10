@@ -19,7 +19,7 @@ import com.wifiesta.apiresttemplate.core.service.UserService;
  *
  */
 @RestController
-@RequestMapping("/params")
+@RequestMapping("/v1/params")
 public class ParamController {
 
     private static final Logger LOG = LoggerFactory.getLogger(ParamController.class);
@@ -29,6 +29,12 @@ public class ParamController {
 
     @Autowired
     private UserService userService;
+    
+    @RequestMapping(value = "/healthcheck", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public boolean healthCheck() {
+        return true;
+    }
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)

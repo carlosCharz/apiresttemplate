@@ -5,7 +5,7 @@ All notable changes to the project will be documented in this file, in a per rel
 
 -------------------------------------------------------------------------------
 
-## [project_r1_v1] - 2020-04-11
+## [r1_v1] - 2020-04-11
 
 ## Added
 - Initial commit

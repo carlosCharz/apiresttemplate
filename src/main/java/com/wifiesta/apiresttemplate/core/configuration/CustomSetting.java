@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "custom")
 public class CustomSetting {
 
-    private static final Logger logger = LoggerFactory.getLogger(CustomSetting.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CustomSetting.class);
 
     private String serverUrl;
 
@@ -27,12 +27,12 @@ public class CustomSetting {
     private String imageQuality;
 
     public CustomSetting() {
-        logger.info("Loading custom properties");
+        LOG.info("Loading custom properties");
     }
 
     @PostConstruct
     public void postConstruct() {
-        logger.info("Custom properties -> serverUrl: '{}', serverPort: '{}', debuggable: '{}', imageQuality: '{}'",
+        LOG.info("Custom properties -> serverUrl: '{}', serverPort: '{}', debuggable: '{}', imageQuality: '{}'",
                 serverUrl, serverPort, debuggable, imageQuality);
     }
 

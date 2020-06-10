@@ -18,12 +18,12 @@ import com.wifiesta.apiresttemplate.core.configuration.ProjectBanner;
 @SpringBootApplication
 public class EntryPoint extends SpringBootServletInitializer {
 
-    private static final Logger logger = LoggerFactory.getLogger(EntryPoint.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EntryPoint.class);
     private static final String CATALINA_HOME = System.getProperty("catalina.home");
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        logger.info("Catalina home OS variable: {}", CATALINA_HOME);
+        LOG.info("Catalina home OS variable: {}", CATALINA_HOME);
         return application.sources(EntryPoint.class).banner(new ProjectBanner());
     }
 

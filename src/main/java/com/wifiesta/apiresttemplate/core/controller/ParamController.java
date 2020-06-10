@@ -22,7 +22,7 @@ import com.wifiesta.apiresttemplate.core.service.UserService;
 @RequestMapping("/params")
 public class ParamController {
 
-    private static final Logger logger = LoggerFactory.getLogger(ParamController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ParamController.class);
 
     @Autowired
     private CustomSetting customSetting;
@@ -33,7 +33,7 @@ public class ParamController {
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public void printAllEnvironmentParameters() {
-        logger.info(customSetting.toString());
+        LOG.info(customSetting.toString());
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)

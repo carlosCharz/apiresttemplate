@@ -1,6 +1,9 @@
 package com.wifiesta.apiresttemplate.core.util;
 
+import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
@@ -39,6 +42,15 @@ public class Util {
     public static Long getCurrentTimeMillis() {
         return System.currentTimeMillis();
     }
+    
+    public LocalDate nowDate() {
+        return ZonedDateTime.now(ZoneOffset.UTC).toLocalDate();
+    }
+    
+    public LocalDateTime nowTZ(String timeZone) {
+        ZoneId zoneId = ZoneId.of(timeZone);
+        return ZonedDateTime.now(zoneId).toLocalDateTime();
+    }
 
     public static LocalDateTime now() {
         return ZonedDateTime.now(ZoneOffset.UTC).toLocalDateTime();
@@ -50,6 +62,19 @@ public class Util {
 
     public static int nowSeconds() {
         return (int) (nowMillis() / 1000);
+    }
+    
+    public long toMillis(LocalDateTime localDateTime) {
+        return localDateTime.toInstant(ZoneOffset.UTC).toEpochMilli();
+    }
+    
+    public long nowLocalDateMillisAtStartOfDay() {
+        LocalDate nowLocalDate = nowDate();
+        return nowLocalDate.atStartOfDay(ZoneOffset.UTC).toInstant().toEpochMilli();
+    }
+    
+    public LocalDateTime fromMillis(long millis) {
+        return LocalDateTime.ofInstant(Instant.ofEpochMilli(millis), ZoneOffset.UTC);
     }
 
     public static List<String> split(String listStr) {

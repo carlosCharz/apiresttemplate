@@ -29,7 +29,7 @@ public class ParamController {
 
     @Autowired
     private UserService userService;
-    
+
     @RequestMapping(value = "/healthcheck", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public boolean healthCheck() {

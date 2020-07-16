@@ -8,7 +8,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
  * @author charz
  */
 
-@EnableConfigurationProperties({CustomSetting.class})
+@EnableConfigurationProperties
 public class AppConfiguration {
 
 }

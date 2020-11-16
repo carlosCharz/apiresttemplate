@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import com.wifiesta.apiresttemplate.core.configuration.CustomSetting;
+import com.wifiesta.apiresttemplate.core.configuration.CustomSettings;
 import com.wifiesta.apiresttemplate.core.service.UserService;
 
 /**
@@ -25,7 +25,7 @@ public class ParamController {
     private static final Logger LOG = LoggerFactory.getLogger(ParamController.class);
 
     @Autowired
-    private CustomSetting customSetting;
+    private CustomSettings customSetting;
 
     @Autowired
     private UserService userService;

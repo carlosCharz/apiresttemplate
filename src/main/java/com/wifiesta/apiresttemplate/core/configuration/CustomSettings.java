@@ -14,9 +14,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties(prefix = "custom")
-public class CustomSetting {
+public class CustomSettings {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CustomSetting.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CustomSettings.class);
 
     private String serverUrl;
 
@@ -26,14 +26,17 @@ public class CustomSetting {
 
     private String imageQuality;
 
-    public CustomSetting() {
+    private Boolean enableSwagger;
+
+    public CustomSettings() {
         LOG.info("Loading custom properties");
     }
 
     @PostConstruct
     public void postConstruct() {
-        LOG.info("Custom properties -> serverUrl: '{}', serverPort: '{}', debuggable: '{}', imageQuality: '{}'",
-                serverUrl, serverPort, debuggable, imageQuality);
+        LOG.info(
+                "Custom properties -> serverUrl: '{}', serverPort: '{}', debuggable: '{}', enableSwagger: '{}', imageQuality: '{}'",
+                serverUrl, serverPort, debuggable, imageQuality, enableSwagger);
     }
 
     public String getServerUrl() {
@@ -68,10 +71,18 @@ public class CustomSetting {
         this.imageQuality = imageQuality;
     }
 
+    public Boolean getEnableSwagger() {
+        return enableSwagger;
+    }
+
+    public void setEnableSwagger(Boolean enableSwagger) {
+        this.enableSwagger = enableSwagger;
+    }
+
     @Override
     public String toString() {
-        return String.format("{ serverUrl: %s, serverPort: %d, debuggable: %s, imageQuality: %s }", serverUrl,
-                serverPort, debuggable, imageQuality);
+        return "[serverUrl=" + serverUrl + ", serverPort=" + serverPort + ", debuggable=" + debuggable
+                + ", imageQuality=" + imageQuality + ", enableSwagger=" + enableSwagger + "]";
     }
 
 }

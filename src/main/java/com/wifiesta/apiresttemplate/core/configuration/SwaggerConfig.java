@@ -3,14 +3,12 @@ package com.wifiesta.apiresttemplate.core.configuration;
 import java.util.Collections;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Swagger configuration file for the rest ws documentation
@@ -18,15 +16,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @author charz
  */
 @Configuration
-@EnableSwagger2
-@Profile("dev") // we enable the Swagger API just for DEV with Spring Profiles
 public class SwaggerConfig {
 
     @Bean
-    public Docket api() {
+    public Docket api(CustomSettings settings) {
         return new Docket(DocumentationType.SWAGGER_2).select()
                 .apis(RequestHandlerSelectors.basePackage("com.wifiesta.apiresttemplate.core.controller"))
-                .paths(PathSelectors.any()).build().apiInfo(apiInfo());
+                .paths(PathSelectors.any()).build().apiInfo(apiInfo()).enable(settings.getEnableSwagger());
     }
 
     private ApiInfo apiInfo() {
